@@ -87,7 +87,7 @@ function Dashboard() {
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <Link to={`${location.origin}/Images`}>
-                <ComplexStatisticsCard icon="pets" title="Todal Count" count={count} />
+                <ComplexStatisticsCard icon="pets" title="Total Count" count={count} />
               </Link>
             </MDBox>
           </Grid>
