@@ -36,8 +36,11 @@ import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 import S3 from "react-aws-s3-typescript";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Dashboard() {
+  const route = useLocation().pathname.split("/").slice(1);
   const [count, setCount] = useState([]);
   const fetchCount = () => {
     const ReactS3Client = new S3({
@@ -83,7 +86,9 @@ function Dashboard() {
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard icon="pets" title="Today's Count" count={count} />
+              <Link to={`${location.origin}/Images`}>
+                <ComplexStatisticsCard icon="pets" title="Today's Count" count={count} />
+              </Link>
             </MDBox>
           </Grid>
           {/* <Grid item xs={12} md={6} lg={3}>
